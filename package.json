@@ -1,0 +1,57 @@
+{
+  "name": "2ndscreen-addon",
+  "fullName": "2nd screen",
+  "version": "1.0.0",
+  "keywords": [
+    "pusher",
+    "websocket",
+    "2ndscreen"
+  ],
+  "description": "Display a button that'll send the current item to a 2nd screen (using the \"2nd screen\" template)",
+  "devonly": true,
+  "joshfire": {
+    "hooks": [
+      "startfile",
+      "bootstrap",
+      "item"
+    ],
+    "options": {
+      "schema": {
+        "pusherAppKey": {
+          "type": "string",
+          "title": "<a href=\"http://pusher.com\">Pusher</a> APP KEY"
+        },
+        "2ndscreenappid": {
+          "type": "string",
+          "title": "2nd screen app id (if this app is not the principal screen"
+        }
+      },
+      "form": [
+        "pusherAppKey",
+        {
+          "type": "fieldset",
+          "legend": "Screen settings",
+          "items": [
+            {
+              "type": "selectfieldset",
+              "title": "Is this app the 2nd screen?",
+              "items": [
+                {
+                  "type": "optionfieldset",
+                  "legend": "Yes"
+                },
+                {
+                  "type": "optionfieldset",
+                  "legend": "No",
+                  "items": [
+                    "2ndscreenappid"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
